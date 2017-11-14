@@ -1,3 +1,8 @@
+/*
+    Creator: Stefan Ekström
+    Project started: 13th November, 2017
+    Project Declaration: Led stripes with a Pirsensor.
+*/
 #include <Adafruit_DotStar.h>
 //#include "funktioner.h"
 
