@@ -28,13 +28,39 @@ void setup()
 void loop()
 
 {
-    if(digitalRead(Pirsensor) == HIGH)
+    if(digitalRead(Pirsensor) == HIGH)  //steady_light_mode();
     {
-        steady_light_mode();
+        for (int i = 0; i < NUMPIXELS; i++)
+        {
+            strip.setPixelColor (i, 255, 255, 255);
+            strip.show();    
+        }
+        delay(2000);
     }
-    if(digitalRead(Pirsensor) == LOW)
+    
+    if(digitalRead(Pirsensor) == LOW)  //lights_off();
     {
-        lights_off();
+        for (int fade_led = 0; fade_led < 100; fade_led--)
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                strip.setPixelColor (i, fade_led, fade_led, fade_led);
+            }
+            strip.show();
+            delay(200);
+        }
+        for (int fade_led = 100; fade_led > 0; fade_led++)
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                strip.setPixelColor (i, fade_led, fade_led, fade_led);
+            }
+            strip.show();            
+            delay(200);
+        }
+        
     }
 }
-// ******************************-- >> End <<-- ************************
+    
+    // ******************************-- >> End <<-- ************************
+

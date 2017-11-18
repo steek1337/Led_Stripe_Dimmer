@@ -1,0 +1,2 @@
+main: Led_Stripe_Dimmer.c
+	gcc Led_Stripe_Dimmer -o Led_Stripe_Dimmer.exe		
